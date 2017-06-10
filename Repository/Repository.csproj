@@ -112,6 +112,10 @@
     <Compile Include="Migrations\201706102052576_MinorChanges.Designer.cs">
       <DependentUpon>201706102052576_MinorChanges.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201706102221542_AddDataAnnotations.cs" />
+    <Compile Include="Migrations\201706102221542_AddDataAnnotations.Designer.cs">
+      <DependentUpon>201706102221542_AddDataAnnotations.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="WebstoreContext.cs" />
   </ItemGroup>
@@ -133,6 +137,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201706102052576_MinorChanges.resx">
       <DependentUpon>201706102052576_MinorChanges.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706102221542_AddDataAnnotations.resx">
+      <DependentUpon>201706102221542_AddDataAnnotations.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
