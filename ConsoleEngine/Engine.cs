@@ -13,7 +13,13 @@ namespace ConsoleEngine
     {
         public string Options()
         {
-            Console.WriteLine("Type \"new user\" to register a new user, \"show users\" to print a list of users or \"exit\" to quit the program...");
+            Console.WriteLine(@"
+Type method and press Enter:
+
+1:  new user
+2:  login
+3:  show users
+4:  exit");
             return Console.ReadLine();
         }
         public void RegisterUser()
@@ -34,6 +40,28 @@ namespace ConsoleEngine
 
                 foreach (var item in newUserQuery)
                     Console.WriteLine("New user created: {0}", item.Username);
+            }
+        }
+        public void Login()
+        {
+            using (var db = new WebstoreContext())
+            {
+                Console.WriteLine("Enter username");
+                var name = Console.ReadLine();
+
+                Console.WriteLine("Enter password");
+                var pass = Console.ReadLine();
+
+                var user = (from u in db.Users
+                           where u.Username == name && u.Password == pass
+                           select u).Count();
+
+                Console.WriteLine(user.ToString());
+                Console.ReadKey();
+
+                var message = (user != 1) ? "Failed" : "Succeeded";
+                Console.WriteLine("Login attempt {0}", message);
+
             }
         }
         public void PrintAllUsers()

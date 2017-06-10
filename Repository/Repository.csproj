@@ -100,6 +100,18 @@
     <Compile Include="Migrations\201706101205186_InitialCreate.Designer.cs">
       <DependentUpon>201706101205186_InitialCreate.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201706102015130_AddUserInventory.cs" />
+    <Compile Include="Migrations\201706102015130_AddUserInventory.Designer.cs">
+      <DependentUpon>201706102015130_AddUserInventory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201706102026414_AddInventoryItemAndRelations.cs" />
+    <Compile Include="Migrations\201706102026414_AddInventoryItemAndRelations.Designer.cs">
+      <DependentUpon>201706102026414_AddInventoryItemAndRelations.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201706102052576_MinorChanges.cs" />
+    <Compile Include="Migrations\201706102052576_MinorChanges.Designer.cs">
+      <DependentUpon>201706102052576_MinorChanges.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="WebstoreContext.cs" />
   </ItemGroup>
@@ -112,6 +124,15 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201706101205186_InitialCreate.resx">
       <DependentUpon>201706101205186_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706102015130_AddUserInventory.resx">
+      <DependentUpon>201706102015130_AddUserInventory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706102026414_AddInventoryItemAndRelations.resx">
+      <DependentUpon>201706102026414_AddInventoryItemAndRelations.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706102052576_MinorChanges.resx">
+      <DependentUpon>201706102052576_MinorChanges.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

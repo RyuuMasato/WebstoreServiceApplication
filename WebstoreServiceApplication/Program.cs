@@ -17,6 +17,8 @@ namespace WebstoreServiceApplication
                 string choice = engine.Options();
                 if (choice.Equals("new user"))
                     engine.RegisterUser();
+                else if (choice.Equals("login"))
+                    engine.Login();
                 else if (choice.Equals("show users"))
                     engine.PrintAllUsers();
                 else if (choice.Equals("exit"))
