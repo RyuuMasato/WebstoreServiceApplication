@@ -34,6 +34,8 @@ Type method and press Enter:
                 db.Users.Add(newUser);
                 db.SaveChanges();
 
+                Console.WriteLine("Created new user with the ID: {0}", GetUserIdByName(newUsername));
+
                 var newUserQuery = from u in db.Users
                                    where newUsername == u.Username
                                    select u;
@@ -41,6 +43,20 @@ Type method and press Enter:
                 foreach (var item in newUserQuery)
                     Console.WriteLine("New user created: {0}", item.Username);
             }
+        }
+        public int GetUserIdByName(string name)
+        {
+            using (var db = new WebstoreContext())
+            {
+                var result = -1;
+                var queryUserId = from u in db.Users
+                                  where u.Username.Equals(name)
+                                  select u.UserId;
+                if (queryUserId.Count() == 1)
+                    result = queryUserId.First();
+                return result;
+            }
+            
         }
         public void Login()
         {
