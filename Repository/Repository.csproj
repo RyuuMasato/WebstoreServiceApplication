@@ -132,6 +132,10 @@
     <Compile Include="Migrations\201706111513273_updateDB.Designer.cs">
       <DependentUpon>201706111513273_updateDB.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201706111530054_AddedUserTypeEnum.cs" />
+    <Compile Include="Migrations\201706111530054_AddedUserTypeEnum.Designer.cs">
+      <DependentUpon>201706111530054_AddedUserTypeEnum.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="WebstoreContext.cs" />
   </ItemGroup>
@@ -162,6 +166,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201706111513273_updateDB.resx">
       <DependentUpon>201706111513273_updateDB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706111530054_AddedUserTypeEnum.resx">
+      <DependentUpon>201706111530054_AddedUserTypeEnum.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
