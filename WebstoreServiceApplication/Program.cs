@@ -21,6 +21,8 @@ namespace WebstoreServiceApplication
                     engine.Login();
                 else if (choice.Equals("show users"))
                     engine.PrintAllUsers();
+                else if (choice.Equals("new product"))
+                    engine.CreateProduct();
                 else if (choice.Equals("exit"))
                     break;
             }

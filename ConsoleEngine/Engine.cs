@@ -19,9 +19,38 @@ Type method and press Enter:
 1:  new user
 2:  login
 3:  show users
-4:  exit");
+4:  new product
+5:  exit");
             return Console.ReadLine();
         }
+
+        public void CreateProduct()
+        {
+            using (var db = new WebstoreContext())
+            {
+                Console.WriteLine("Type product name");
+                var prodName = Console.ReadLine();
+
+                Console.WriteLine("Type product price");
+                var prodPrice = Double.Parse(Console.ReadLine());
+
+                var newProduct = new Product { Name = prodName, Price = prodPrice};
+
+                db.Products.Add(newProduct);
+                db.SaveChanges();
+
+                Console.WriteLine("Created new product with the ID: {0}", GetProductIdByName(newProduct.Name));
+
+                var newProductQuery = from p in db.Products
+                                   where prodName == p.Name
+                                   select p;
+
+                foreach (var product in newProductQuery)
+                    Console.WriteLine("New product created: {0}", product.Name);
+            }
+        }
+
+
         public void RegisterUser()
         {
             using (var db = new WebstoreContext())
@@ -57,6 +86,21 @@ Type method and press Enter:
                 return result;
             }
             
+        }
+
+        public int GetProductIdByName(string name)
+        {
+            using (var db = new WebstoreContext())
+            {
+                var result = -1;
+                var queryProductId = from p in db.Products
+                                  where p.Name.Equals(name)
+                                  select p.ProductId;
+                if (queryProductId.Count() == 1)
+                    result = queryProductId.First();
+                return result;
+            }
+
         }
         public void Login()
         {
