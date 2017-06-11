@@ -15,15 +15,17 @@ namespace WebstoreServiceApplication
             while (true)
             {
                 string choice = engine.Options();
-                if (choice.Equals("new user"))
+                if (choice.Equals("new user") || choice.Equals("1"))
                     engine.RegisterUser();
-                else if (choice.Equals("login"))
+                else if (choice.Equals("login") || choice.Equals("2"))
                     engine.Login();
-                else if (choice.Equals("show users"))
+                else if (choice.Equals("show users") || choice.Equals("3"))
                     engine.PrintAllUsers();
-                else if (choice.Equals("new product"))
+                else if (choice.Equals("new product") || choice.Equals("4"))
                     engine.CreateProduct();
-                else if (choice.Equals("exit"))
+                else if (choice.Equals("show products") || choice.Equals("5"))
+                    engine.PrintAllProducts();
+                else if (choice.Equals("exit") || choice.Equals("6"))
                     break;
             }
             

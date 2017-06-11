@@ -20,7 +20,8 @@ Type method and press Enter:
 2:  login
 3:  show users
 4:  new product
-5:  exit");
+5:  show products
+6:  exit");
             return Console.ReadLine();
         }
 
@@ -134,6 +135,21 @@ Type method and press Enter:
                 foreach (var user in users)
                     Console.WriteLine("User {0}: {1}", user.UserId, user.Username);
                             
+            }
+        }
+
+
+        public void PrintAllProducts()
+        {
+            using (var db = new WebstoreContext())
+            {
+                var products = from p in db.Products
+                            orderby p.Name
+                            //where Ammount
+                            select p;
+                foreach (var product in products)
+                    Console.WriteLine("Product {0}: {1}", product.ProductId, product.Name);
+
             }
         }
     }

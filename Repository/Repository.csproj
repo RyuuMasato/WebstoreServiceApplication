@@ -128,6 +128,10 @@
     <Compile Include="Migrations\201706111322508_DS-Merge.Designer.cs">
       <DependentUpon>201706111322508_DS-Merge.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201706111513273_updateDB.cs" />
+    <Compile Include="Migrations\201706111513273_updateDB.Designer.cs">
+      <DependentUpon>201706111513273_updateDB.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="WebstoreContext.cs" />
   </ItemGroup>
@@ -155,6 +159,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201706111322508_DS-Merge.resx">
       <DependentUpon>201706111322508_DS-Merge.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706111513273_updateDB.resx">
+      <DependentUpon>201706111513273_updateDB.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
